@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-let topTenMovies = [
+let topTenHorrorMovies = [
     {
         title: 'Honeydew',
         director: 'Devereux Milburn'
@@ -36,11 +36,11 @@ let topTenMovies = [
     },
     {
         title: 'The Lost Boys',
-        director: 'J.R.R. Tolkien'
+        director: 'Joel Schumacher'
     },
     {
         title: 'The Texas Chainsaw Massacre (2003)',
-        director: 'J.R.R. Tolkien'
+        director: 'Marcus Nispel '
     },
   ];
 
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
   //});
   
   app.get('/movies', (req, res) => {
-    res.json(topTenMovies); //sends a JSON response
+    res.json(topTenHorrorMovies); //sends a JSON response
   });
   
   
