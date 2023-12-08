@@ -5,7 +5,7 @@ const express = require('express'),
 
 const app = express();
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
 let topTenHorrorMovies = [
     {
