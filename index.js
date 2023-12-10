@@ -177,7 +177,7 @@ app.use(express.static('public')); //routes all requests for static files to the
 
 app.use(bodyParser.json());
 
-// CREATE requests
+// CREATE 
 app.post('/users', (req, res) => {
     const newUser = req.body; //bodyParser is what allows this to be read
 
@@ -190,7 +190,22 @@ app.post('/users', (req, res) => {
     }
 })
 
-// READ requests
+// UPDATE
+app.put('/users/:ID', (req, res) => {
+    const { id } = req.params;
+    const updatedUser = req.body; //bodyParser is what allows this to be read
+
+    let user = users.find( user => user.id == id );
+
+    if (user) {
+        user.name = updatedUser.name;
+        res.status(200).json(user);
+    } else {
+        res.status(400).send('no such user')
+    }
+})
+
+// READ 
 app.get('/', (req, res) => {
     res.send('default text response'); //sends a response of various types
 });
