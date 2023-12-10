@@ -191,7 +191,7 @@ app.post('/users', (req, res) => {
 })
 
 // UPDATE
-app.put('/users/:ID', (req, res) => {
+app.put('/users/:id', (req, res) => {
     const { id } = req.params;
     const updatedUser = req.body; //bodyParser is what allows this to be read
 
