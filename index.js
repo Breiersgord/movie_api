@@ -40,8 +40,12 @@ let movies = [
         'Title':'Get Out',
         'Description':'A young African-American visits his white girlfriends parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
         'Genre': {
-            'Name':'Psychological Horror' + 'Comedy Horror',
+            'Name':'Psychological Horror',
             'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.' + 'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
+        },
+        'Genre': {
+            'Name':'Comedy Horror',
+            'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
         },
         'Director': {
             'Name':'Jordan Peele',
@@ -66,8 +70,12 @@ let movies = [
         'Title':'The Platform',
         'Description':'A vertical prison with one cell per level. Two people per cell. Only one food platform and two minutes per day to feed. An endless nightmare trapped in The Hole.',
         'Genre': {
-            'Name':'Psychological Horror' + 'Science Fiction Horror', 
-            'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.' + 'Science fiction horror films are a subgenre of science fiction and horror films, often revolving around subjects that include but are not limited to alien invasions, mad scientists, and/or experiments gone wrong.'
+            'Name':'Psychological Horror',
+            'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
+        },
+        'Genre': {
+            'Name':'Science Fiction Horror', 
+            'Description':'Science fiction horror films are a subgenre of science fiction and horror films, often revolving around subjects that include but are not limited to alien invasions, mad scientists, and/or experiments gone wrong.'
         },
         'Director': {
             'Name':'Galder Gaztelu-Urrutia',
@@ -92,8 +100,12 @@ let movies = [
         'Title':'Queen of the Damned',
         'Description':'In this loose sequel to Interview with the Vampire: The Vampire Chronicles (1994), the vampire Lestat becomes a rock star whose music wakes up the equally beautiful and monstrous queen of all vampires.',
         'Genre': {
-            'Name':'Supernatural Horror' + 'Dark Fantasy',
-            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".' + 'Dark fantasy is a subgenre of fantasy literary, artistic, and cinematic works that incorporate disturbing and frightening themes of fantasy. It often combines fantasy with elements of horror or has a gloomy dark tone or an atmosphere of horror and dread.'
+            'Name':'Supernatural Horror',
+            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".'
+        },
+        'Genre': {
+            'Name':'Dark Fantasy',
+            'Description':'Dark fantasy is a subgenre of fantasy literary, artistic, and cinematic works that incorporate disturbing and frightening themes of fantasy. It often combines fantasy with elements of horror or has a gloomy dark tone or an atmosphere of horror and dread.'
         },
         'Director': {
             'Name':'Michael Rymer',
@@ -118,8 +130,12 @@ let movies = [
         'Title':'The Lost Boys',
         'Description':'After moving to a new town, two brothers discover that the area is a haven for vampires.',
         'Genre': {
-            'Name':'Supernatural Horror' + 'Comedy Horror',
-            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".' + 'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
+            'Name':'Supernatural Horror',
+            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".'
+        },
+        'Genre': {
+            'Name':'Comedy Horror',
+            'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
         },
         'Director': {
             'Name':'Joel Schumacher',
@@ -171,6 +187,16 @@ app.get('/movies/:title', (req, res) => {
 
     if (movie) {
         res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+});
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
+
+    if (genre) {
+        res.status(200).json(genre);
     } else {
         res.status(400).send('no such movie')
     }
