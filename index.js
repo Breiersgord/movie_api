@@ -201,6 +201,16 @@ app.get('/movies/genre/:genreName', (req, res) => {
         res.status(400).send('no such movie')
     }
 });
+app.get('/movies/director/:directorName', (req, res) => {
+    const { directorName } = req.params;
+    const director = movies.find( movie => movie.Director.Name === directorName ).Director;
+
+    if (director) {
+        res.status(200).json(director);
+    } else {
+        res.status(400).send('no such movie')
+    }
+});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
