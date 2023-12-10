@@ -74,6 +74,17 @@ app.get('/movies', (req, res) => {
 app.get('/movies', (req, res) => {
     res.status(200).json(movies);
 });
+app.get('/movies:title', (req, res) => {
+    //const title = req.params.title; this is the old way to write this command
+    const {title} = req.params; //this is the new way to write this command
+    const movie = movies.find( movie => movie.Title === title );
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
