@@ -9,46 +9,46 @@ app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
-let topTenHorrorMovies = [
+let movies = [
     {
-        title: 'Honeydew',
-        director: 'Devereux Milburn'
+        'title':'Honeydew',
+        'director': 'Devereux Milburn'
     },
     {
-        title: 'The Black Phone',
-        director: 'Scott Derrickson'
+        'title':'The Black Phone',
+        'director':'Scott Derrickson'
     },
     {
-        title: 'Get Out',
-        director: 'Jordan Peele'
+        'title':'Get Out',
+        'director':'Jordan Peele'
     },
     {
-        title: 'Meander',
-        director: 'Mathieu Turi'
+        'title':'Meander',
+        'director':'Mathieu Turi'
     },
     {
-        title: 'The Platform',
-        director: 'Galder Gaztelu-Urrutia'
+        'title':'The Platform',
+        'director':'Galder Gaztelu-Urrutia'
     },
     {
-        title: 'Re-Cycle',
-        director: 'The Pang Brothers'
+        'title':'Re-Cycle',
+        'director':'The Pang Brothers'
     },
     {
-        title: 'Queen of the Damned',
-        director: 'Michael Rymer'
+        'title':'Queen of the Damned',
+        'director':'Michael Rymer'
     },
     {
-        title: '31',
-        director: 'Rob Zombie'
+        'title':'31',
+        'director':'Rob Zombie'
     },
     {
-        title: 'The Lost Boys',
-        director: 'Joel Schumacher'
+        'title':'The Lost Boys',
+        'director':'Joel Schumacher'
     },
     {
-        title: 'The Texas Chainsaw Massacre (2003)',
-        director: 'Marcus Nispel '
+        'title':'The Texas Chainsaw Massacre (2003)',
+        'director':'Marcus Nispel '
     },
   ];
 
@@ -56,7 +56,7 @@ app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(express.static('public')); //routes all requests for static files to their corresponding files within the 'public' folder on a server
 
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
   // GET requests
   
@@ -74,10 +74,10 @@ app.get('/movies', (req, res) => {
 app.get('/movies', (req, res) => {
     res.status(200).json(movies);
 });
-app.get('/movies:title', (req, res) => {
+app.get('/movies/:title', (req, res) => {
     //const title = req.params.title; this is the old way to write this command
-    const {title} = req.params; //this is the new way to write this command
-    const movie = movies.find( movie => movie.Title === title );
+    const { title } = req.params; //this is the new way to write this command
+    const movie = movies.find( movie => movie.title === title );
 
     if (movie) {
         res.status(200).json(movie);
