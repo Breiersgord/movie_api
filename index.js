@@ -71,6 +71,9 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
     res.json(topTenHorrorMovies); //sends a JSON response
 });
+app.get('/movies', (req, res) => {
+    res.status(200).json(movies);
+});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
