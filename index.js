@@ -9,6 +9,19 @@ app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
+let users = [
+    {
+        id: 1,
+        name: 'Kim',
+        favoriteMovies: []
+    },
+    {
+        id: 2,
+        name: 'Joe',
+        favoriteMovies: []
+    }
+]
+
 let movies = [
     {
         'Title':'Honeydew',
@@ -164,12 +177,20 @@ app.use(express.static('public')); //routes all requests for static files to the
 
 app.use(bodyParser.json());
 
-  // GET requests
-  
-//app.get('/documentation.html', (req, res)=>{
-    //res.sendFile('public/documentation.html', {root: __dirname});
-//});
+// CREATE requests
+app.post('/users', (req, res) => {
+    const newUser = req.body; //bodyParser is what allows this to be read
 
+    if (newUser.name) {
+        newUser.id = uuid.v4();
+        users.push(newUser);
+        res.status(201).json(newUser)
+    } else {
+        res.status(400).send('users need names')
+    }
+})
+
+// READ requests
 app.get('/', (req, res) => {
     res.send('default text response'); //sends a response of various types
 });
