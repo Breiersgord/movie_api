@@ -1,9 +1,11 @@
 const express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    bodyParser = require('body-parser'),
+    uuid = require('uuid');
 
-const app = express();
+app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
@@ -53,6 +55,8 @@ let topTenHorrorMovies = [
 app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(express.static('public')); //routes all requests for static files to their corresponding files within the 'public' folder on a server
+
+app.use(bodyParser.json);
 
   // GET requests
   
