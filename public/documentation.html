@@ -6,9 +6,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MyFlix: Horror Edition</title>
+        <title>MyFlix Movie API</title>
+        <link rel="stylesheet" href="/styles.css" />
     </head>
     <body>
+        <h1>MyFlix: Horror Edition</h1>
         <p>this API will return a list of ALL movies to a user and consider their search criteria in returns.
       genres users will be able to explore include thriller, psychological, supernatural, slasher, fantasy, 
       comedy, splatter, B, monster, paranormal, and survival (to name a few). a user can look up a specific
@@ -16,5 +18,230 @@
       information associated with it. in order to save their searches / create favorites / etc., users will
       also have the ability to register with user info (and subsequently unregister, if desired.)
         </p>
+        <br />
+        <h2>Supported Requests</h2>
+        <table>
+            <tr>
+                <th>Request</th>
+                <th>URL</th>
+                <th>HTTP Method</th>
+                <th>'Request' Body Data Format</th>
+                <th>'Response' Body Data Format</th>
+            </tr>
+            <tr>
+                <td>Add a User</td>
+                <td>/users</td>
+                <td>POST</td>
+                <td>
+                    A JSON object that holds data about a user 'to add' <br />
+                    <br />
+                    <code>
+                        {
+                            "_id": <br />
+                            "Name": <br />
+                            "Username": <br />
+                            "Password": <br />
+                            "Email": <br />
+                            "Birthday": <br />
+                            "Favorite Movies": 
+                        }
+                    </code>
+                </td>
+                <td>
+                    A JSON object that holds 'added' user data <br />
+                    <br />
+                    <code>
+                        {
+                            "_id": [uuid] <br />
+                            "Name": Jane Doe <br />
+                            "Username": [username] <br />
+                             "Password": [password] <br />
+                            "Email": email@email.com <br />
+                            "Birthday": [numerical birthday] <br />
+                            "Favorite Movies": [movie : movie title]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Add a Movie to a Users List of Favorites</td>
+                <td>/users/:id/:movieTitle</td>
+                <td>POST</td>
+                <td>
+                    A JSON object that holds data about a user's favorite movies 'to add' <br />
+                    <br />
+                    <code>
+                        {
+                            "Title": <br />
+                            "Genre": <br />
+                            "Description": <br />
+                            "Director": <br />
+                            "DOB": <br />
+                            "DOD": <br />
+                            "ImageURL": <br />
+                            "Featured":  
+                        }
+                    </code>
+                </td>
+                <td>
+                    A JSON object that holds 'added' favorite movie data <br />
+                    <br />
+                    <code>
+                        {
+                            "Title": [movie title] <br />
+                            "Description": [description of movie] <br />
+                            "Genre": { <br />
+                                "Name": [name of genre(s)] <br />
+                                "Description": [description of genre(s)]
+                            } <br />
+                            "Director": { <br />
+                                "Name": [name of director] <br />
+                                "Bio": [director short bio] <br />
+                                "DOB": [director date of birth] <br />
+                                "DOD": [director date of death]
+                            }, <br />
+                            "ImageURL": [image of director] <br />
+                            "Featured": [true or false]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Return a List of All Movies to a User</td>
+                <td>/movies</td>
+                <td>GET</td>
+                <td>N/A</td>
+                <td>
+                    A JSON Object Holding Data About a Movie <br /> 
+                    <br />
+                    <code>
+                        {
+                            "Title": [movie title] <br />
+                            "Description": [description of movie] <br />
+                            "Genre": { <br />
+                                "Name": [name of genre(s)] <br />
+                                "Description": [description of genre(s)]
+                            }, <br />
+                            "Director": { <br />
+                                "Name": [name of director] <br />
+                                "Bio": [director short bio] <br />
+                                "DOB": [director date of birth] <br />
+                                "DOD": [director date of death]
+                            }, <br />
+                            "ImageURL": [image of director] <br />
+                            "Featured": [true or false]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Return Data about a Genre by Name</td>
+                <td>/movies/genre/:genreName</td>
+                <td>GET</td>
+                <td>N/A</td>
+                <td>A JSON Object Holding Data About a Genre <br />
+                    <br />
+                    <code>
+                        {
+                            "Name": [name of genre]<br />
+                            "Description": [description of genre]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Return Data About a Director by Name</td>
+                <td>/movies/director/:directorName</td>
+                <td>GET</td>
+                <td>N/A</td>
+                <td>A JSON Object Holding Data About a Director <br />
+                    <br />
+                    <code>
+                        {
+                            "Name": [director name] <br />
+                            "Bio": [short director biography] <br />
+                            "DOB": [director date of birth] <br />
+                            "DOD": [director date of death]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Return a List of All Users</td>
+                <td>/users</td>
+                <td>GET</td>
+                <td>N/A</td>
+                <td>A JSON Object Holding Data About All Users <br />
+                    <br />
+                    <code>
+                        {
+                            "_id": [uuid] <br />
+                            "Name": Jane Doe <br />
+                            "Username": [username] <br />
+                             "Password": [password] <br />
+                            "Email": email@email.com <br />
+                            "Birthday": [numerical birthday] <br />
+                            "Favorite Movies": [movie : movie title]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Allow Users to Update Their User Info</td>
+                <td>/users/:id</td>
+                <td>PUT</td>
+                <td>A JSON Object Holding Data About the User Info 'to be updated' <br />
+                    <br />
+                    <code>
+                        {
+                            Username: req.body.Username,<br />
+                            Password: req.body.Password,<br />
+                            Email: req.body.Email,<br />
+                            Birthday: req.body.Birthday
+                        }
+                    </code>
+                </td>
+                <td>A JSON Object Holding Data About the Updated User Info <br />
+                    <br />
+                    <code>
+                        {
+                            "_id": [uuid] <br />
+                            "Name": Jane Doe <br />
+                            <b>"Username": [username] <br />
+                            "Password": [password] <br />
+                            "Email": email@email.com <br />
+                            "Birthday": [numerical birthday]</b> <br />
+                            "Favorite Movies": [movie : movie title]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Allow Users to Remove a Movie from Their List of Favorites</td>
+                <td>/users/:id/:movieTitle</td>
+                <td>DELETE</td>
+                <td>N/A</td>
+                <td>A JSON Object Holding Data About the Updated User Info
+                    <code>
+                        {
+                            "_id": [uuid]
+                            "Name": Jane Doe <br />
+                            "Username": [username] <br />
+                             "Password": [password] <br />
+                            "Email": email@email.com <br />
+                            "Birthday": [numerical birthday] <br />
+                            <b>"Favorite Movies": [remove movie : N/A]</b>
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Allow Existing Users to Deregister</td>
+                <td>/users/:id</td>
+                <td>DELETE</td>
+                <td>None</td>
+                <td>TBD</td>
+            </tr>
+        </table>
     </body>
 </html> 
