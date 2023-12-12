@@ -16,7 +16,7 @@ let users = [
         username: 'userKim',
         password: 'passKim!!',
         email: 'kim@kim.com',
-        birthday: '01/01/2001'
+        birthday: '01/01/2001',
         favoriteMovies: []
     },
     {
@@ -25,7 +25,7 @@ let users = [
         username: 'userJoe',
         password: 'passJoe!!',
         email: 'joe@joe.com',
-        birthday: '02/02/2002'
+        birthday: '02/02/2002',
         favoriteMovies: []
     }
 ]
