@@ -13,11 +13,17 @@ let users = [
     {
         id: 1,
         name: 'Kim',
+        username: 'userKim',
+        password: 'passKim!!',
+        email: 'kim@kim.com',
         favoriteMovies: []
     },
     {
         id: 2,
         name: 'Joe',
+        username: 'userJoe',
+        password: 'passJoe!!',
+        email: 'joe@joe.com',
         favoriteMovies: []
     }
 ]
