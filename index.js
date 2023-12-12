@@ -203,6 +203,53 @@ app.post('/users/:id/:movieTitle', (req, res) => {
     }
 })
 
+// READ 
+app.get('/', (req, res) => {
+    res.send('default text response'); //sends a response of various types
+});
+  
+app.get('/movies', (req, res) => {
+    res.json(movies); //sends a JSON response
+});
+
+app.get('/movies', (req, res) => {
+    res.status(200).json(movies);
+});
+
+app.get('/movies/:title', (req, res) => {
+    //const title = req.params.title; this is the old way to write this command
+    const { title } = req.params; //this is the new way to write this command
+    const movie = movies.find( movie => movie.Title === title );
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+});
+
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
+
+    if (genre) {
+        res.status(200).json(genre);
+    } else {
+        res.status(400).send('no such genre')
+    }
+});
+
+app.get('/movies/director/:directorName', (req, res) => {
+    const { directorName } = req.params;
+    const director = movies.find( movie => movie.Director.Name === directorName ).Director;
+
+    if (director) {
+        res.status(200).json(director);
+    } else {
+        res.status(400).send('no such director')
+    }
+});
+
 // UPDATE
 app.put('/users/:id', (req, res) => {
     const { id } = req.params;
@@ -244,49 +291,6 @@ app.delete('/users/:id', (req, res) => {
         res.status(400).send('no such user')
     }
 })
-
-// READ 
-app.get('/', (req, res) => {
-    res.send('default text response'); //sends a response of various types
-});
-  
-app.get('/movies', (req, res) => {
-    res.json(topTenHorrorMovies); //sends a JSON response
-});
-app.get('/movies', (req, res) => {
-    res.status(200).json(movies);
-});
-app.get('/movies/:title', (req, res) => {
-    //const title = req.params.title; this is the old way to write this command
-    const { title } = req.params; //this is the new way to write this command
-    const movie = movies.find( movie => movie.Title === title );
-
-    if (movie) {
-        res.status(200).json(movie);
-    } else {
-        res.status(400).send('no such movie')
-    }
-});
-app.get('/movies/genre/:genreName', (req, res) => {
-    const { genreName } = req.params;
-    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
-
-    if (genre) {
-        res.status(200).json(genre);
-    } else {
-        res.status(400).send('no such movie')
-    }
-});
-app.get('/movies/director/:directorName', (req, res) => {
-    const { directorName } = req.params;
-    const director = movies.find( movie => movie.Director.Name === directorName ).Director;
-
-    if (director) {
-        res.status(200).json(director);
-    } else {
-        res.status(400).send('no such movie')
-    }
-});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
