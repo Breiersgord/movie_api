@@ -30,6 +30,7 @@ let users = [
 
 let movies = [
     {
+        'MovieID': 1,
         'Title':'Honeydew',
         'Description':'Strange cravings and hallucinations befall a young couple after seeking shelter in the home of an aging farmer and her peculiar son.',
         'Genre': {
@@ -43,6 +44,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 2,
         'Title':'The Black Phone',
         'Description':'After being abducted by a child killer and locked in a soundproof basement, a 13-year-old boy starts receiving calls on a disconnected phone from the killers previous victims.',
         'Genre': {
@@ -56,6 +58,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 3,
         'Title':'Get Out',
         'Description':'A young African-American visits his white girlfriends parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
         'Genre': {
@@ -73,6 +76,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 4,
         'Title':'Meander',
         'Description':'A woman finds herself locked in a series of strange tunnels full of deadly traps.',
         'Genre': {
@@ -86,6 +90,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 5,
         'Title':'The Platform',
         'Description':'A vertical prison with one cell per level. Two people per cell. Only one food platform and two minutes per day to feed. An endless nightmare trapped in The Hole.',
         'Genre': {
@@ -103,6 +108,7 @@ let movies = [
         'ImageURL':'https://www.imdb.com/name/nm4417935/mediaviewer/rm774882561/?ref_=nm_ov_ph'
     },
     {
+        'MovieID': 6,
         'Title':'Re-Cycle',
         'Description':'A writer wants to get a glimpse of some genuine supernatural occurrences while doing research for a novel, but her experiences lead her down a dark path as she witnesses vivid hallucinations and begins to lose her grip on reality.',
         'Genre': {
@@ -116,6 +122,7 @@ let movies = [
         'ImageURL':'https://www.imdb.com/name/nm4417935/mediaviewer/rm774882561/?ref_=nm_ov_ph'
     },
     {
+        'MovieID': 7,
         'Title':'Queen of the Damned',
         'Description':'In this loose sequel to Interview with the Vampire: The Vampire Chronicles (1994), the vampire Lestat becomes a rock star whose music wakes up the equally beautiful and monstrous queen of all vampires.',
         'Genre': {
@@ -133,6 +140,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 8,
         'Title':'31',
         'Description':'Five carnival workers are kidnapped and held hostage in an abandoned, hellish compound where they are forced to participate in a violent game, the goal of which is to survive twelve hours against a gang of sadistic clowns.',
         'Genre': {
@@ -146,6 +154,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 9,
         'Title':'The Lost Boys',
         'Description':'After moving to a new town, two brothers discover that the area is a haven for vampires.',
         'Genre': {
@@ -163,6 +172,7 @@ let movies = [
         'ImageURL':''
     },
     {
+        'MovieID': 10,
         'Title':'The Texas Chainsaw Massacre (2003)',
         'Description':'After picking up a traumatized young hitchhiker, five friends find themselves stalked and hunted by a deformed chainsaw-wielding loon and his family of equally psychopathic killers.',
         'Genre': {
