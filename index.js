@@ -209,10 +209,6 @@ app.get('/', (req, res) => {
 });
   
 app.get('/movies', (req, res) => {
-    res.json(movies); //sends a JSON response
-});
-
-app.get('/movies', (req, res) => {
     res.status(200).json(movies);
 });
 
@@ -248,6 +244,10 @@ app.get('/movies/director/:directorName', (req, res) => {
     } else {
         res.status(400).send('no such director')
     }
+});
+
+app.get('/users', (req, res) => {
+    res.status(200).json(users);
 });
 
 // UPDATE
