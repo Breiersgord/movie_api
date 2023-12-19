@@ -65,12 +65,9 @@ let movies = [
         'Description':'A young African-American visits his white girlfriends parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
         'Genre': {
             'Name':'Psychological Horror',
-            'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.' + 'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
+            'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
         },
-        'Genre': {
-            'Name':'Comedy Horror',
-            'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
-        },
+      
         'Director': {
             'Name':'Jordan Peele',
             'Bio':'Jordan Peele is an Oscar- and Emmy-winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peeles first feature film, "Get Out," was a critically acclaimed blockbuster, recognized with four Academy Award nominations, including Best Picture. The film would earn Peele the Oscar for Best Original Screenplay. His second feature, "Us," broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released in March of 2019 to widespread critical praise. Peeles third feature, the original horror epic, "Nope," opened in the summer of 2022 to rave reviews, the No. 1 slot at the box office, and once again becoming a widely discussed cultural phenomenon. Five years in the making, Peele produced and co-wrote Henry Selicks stop-motion animated feature, "Wendell & Wild," to which he also lent his voice as one of the title characters. Under the Monkeypaw banner, Peele co-wrote and produced Nia DaCostas "Candyman" which made history as the first film helmed by a Black woman director to open at No. 1 at the box office. He also produced Spike Lees "BlacKkKlansman," which earned a nomination for Best Picture and won an Oscar for Best Adapted Screenplay. He has also served as executive producer for numerous television series, including "Hunters" (Amazon), "Lovecraft Country" (HBO), and "The Twilight Zone" (CBS). Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
@@ -99,10 +96,7 @@ let movies = [
             'Name':'Psychological Horror',
             'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
         },
-        'Genre': {
-            'Name':'Science Fiction Horror', 
-            'Description':'Science fiction horror films are a subgenre of science fiction and horror films, often revolving around subjects that include but are not limited to alien invasions, mad scientists, and/or experiments gone wrong.'
-        },
+     
         'Director': {
             'Name':'Galder Gaztelu-Urrutia',
             'Bio':'Galder Gaztelu-Urrutia; born 17 February 1974) is a Spanish film and advertising director and producer.[1] He made his feature-film debut with, The Platform (2019), a dystopian science fiction-horror film. He made a short film, 913 in 2003.[1] He has directed commercials. In 2011, he made The House on the Lake.[1] His feature film debut was in 2019 with the dystopian science fiction-horror film The Platform (its Spanish title is El hoyo). About the film, he said the point is "it isnt about a war between those above and those below — we all have someone above us and someone below us" In February 2023, Deadline announced his next film will be a thriller entitled "Rich Flu", starring Mary Elizabeth Winstead and Jonah Hauer-King.'
@@ -127,10 +121,6 @@ let movies = [
         'MovieID': 7,
         'Title':'Queen of the Damned',
         'Description':'In this loose sequel to Interview with the Vampire: The Vampire Chronicles (1994), the vampire Lestat becomes a rock star whose music wakes up the equally beautiful and monstrous queen of all vampires.',
-        'Genre': {
-            'Name':'Supernatural Horror',
-            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".'
-        },
         'Genre': {
             'Name':'Dark Fantasy',
             'Description':'Dark fantasy is a subgenre of fantasy literary, artistic, and cinematic works that incorporate disturbing and frightening themes of fantasy. It often combines fantasy with elements of horror or has a gloomy dark tone or an atmosphere of horror and dread.'
@@ -159,10 +149,6 @@ let movies = [
         'MovieID': 9,
         'Title':'The Lost Boys',
         'Description':'After moving to a new town, two brothers discover that the area is a haven for vampires.',
-        'Genre': {
-            'Name':'Supernatural Horror',
-            'Description':'Supernatural horror is a film genre that combines aspects of supernatural film and horror film. Supernatural occurrences in such films often include ghosts and demons, and many supernatural horror films have elements of religion. Common themes in the genre are the afterlife, the Devil, and demonic possession. Not all supernatural horror films focus on religion, and they can have "more vivid and gruesome violence".'
-        },
         'Genre': {
             'Name':'Comedy Horror',
             'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
