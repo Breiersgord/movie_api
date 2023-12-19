@@ -12,22 +12,31 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {f
 let users = [
     {
         id: 1,
-        name: 'Kim',
-        username: 'userKim',
-        password: 'passKim!!',
-        email: 'kim@kim.com',
-        birthday: '01/01/2001',
+        name: 'Steve',
+        username: 'userSteve',
+        password: 'passSteve!!',
+        email: 'steve.h@st.com',
+        birthday: '06/05/1966',
         favoriteMovies: []
     },
     {
         id: 2,
-        name: 'Joe',
-        username: 'userJoe',
-        password: 'passJoe!!',
-        email: 'joe@joe.com',
-        birthday: '02/02/2002',
+        name: 'Billy',
+        username: 'userBilly',
+        password: 'passBilly!!',
+        email: 'billy.h@st.com',
+        birthday: '03/29/1967',
         favoriteMovies: []
-    }
+    },
+    {
+        id: 3,
+        name: 'Eddie',
+        username: 'userEddie',
+        password: 'passEddie!!',
+        email: 'eddie.m@st.com',
+        birthday: '01/01/1965',
+        favoriteMovies: []
+    },
 ]
 
 let movies = [
