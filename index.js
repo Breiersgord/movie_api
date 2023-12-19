@@ -173,6 +173,21 @@ let movies = [
         },
         'ImageURL':''
     },
+    {
+        'MovieID': 11,
+        'Title':'Us',
+        'Description':'A familys serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them',
+        'Genre': {
+            'Name':'Psychological Horror',
+            'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
+        },
+      
+        'Director': {
+            'Name':'Jordan Peele',
+            'Bio':'Jordan Peele is an Oscar- and Emmy-winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peeles first feature film, "Get Out," was a critically acclaimed blockbuster, recognized with four Academy Award nominations, including Best Picture. The film would earn Peele the Oscar for Best Original Screenplay. His second feature, "Us," broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released in March of 2019 to widespread critical praise. Peeles third feature, the original horror epic, "Nope," opened in the summer of 2022 to rave reviews, the No. 1 slot at the box office, and once again becoming a widely discussed cultural phenomenon. Five years in the making, Peele produced and co-wrote Henry Selicks stop-motion animated feature, "Wendell & Wild," to which he also lent his voice as one of the title characters. Under the Monkeypaw banner, Peele co-wrote and produced Nia DaCostas "Candyman" which made history as the first film helmed by a Black woman director to open at No. 1 at the box office. He also produced Spike Lees "BlacKkKlansman," which earned a nomination for Best Picture and won an Oscar for Best Adapted Screenplay. He has also served as executive producer for numerous television series, including "Hunters" (Amazon), "Lovecraft Country" (HBO), and "The Twilight Zone" (CBS). Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
+        },
+        'ImageURL':''
+    }
   ];
 
 app.use(morgan('combined', {stream: accessLogStream}));
