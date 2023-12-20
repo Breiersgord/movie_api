@@ -50,7 +50,9 @@ let movies = [
         },
         'Director': {
             'Name':'Devereux Milburn',
-            'Bio':'Devereux is a New York City-based writer, director, and editor. He is the founder of BlindSpot Studios, an independent production company specializing in the production of narrative films, short documentaries, music videos, and promotional pieces. Since graduating from the Film & TV program at NYUs Tisch School of the Arts, Devereux has collaborated with such artists as Lena Dunham, Mary-Louise Parker, Amy Tan, George Saunders, Rodney Crowell, Garland Jeffreys, Rosanne Cash, Betty Who, Niia, Brian Koppelman, and Gary Shteyngart. His first feature film, Honeydew, was accepted to the 2020 Tribeca Film Festival, where he was nominated for best new narrative director. In addition, the film earned official selections by Sitges Film Festival, Rome Film Festival, Frightfest, Cleveland International Film Festival, Calgary Underground, Strasbourg Film Festival, North Bend Film Festival, and Nightstream. The film is now streaming on most online platforms after a successful theatrical run.'
+            'DOB':'NOT AVAILABLE',
+            'DOD':'N/A',
+            'Bio':'Devereux is a New York City-based writer, director, and editor. He is the founder of BlindSpot Studios, an independent production company specializing in the production of narrative films, short documentaries, music videos, and promotional pieces. Since graduating from the Film & TV program at NYU\'s Tisch School of the Arts, Devereux has collaborated with such artists as Lena Dunham, Mary-Louise Parker, Amy Tan, George Saunders, Rodney Crowell, Garland Jeffreys, Rosanne Cash, Betty Who, Niia, Brian Koppelman, and Gary Shteyngart. His first feature film, Honeydew, was accepted to the 2020 Tribeca Film Festival, where he was nominated for best new narrative director. In addition, the film earned official selections by Sitges Film Festival, Rome Film Festival, Frightfest, Cleveland International Film Festival, Calgary Underground, Strasbourg Film Festival, North Bend Film Festival, and Nightstream. The film is now streaming on most online platforms after a successful theatrical run.'
         },
         'ImageURL':''
     },
@@ -64,14 +66,16 @@ let movies = [
         },
         'Director': {
             'Name':'Scott Derrickson',
-            'Bio':'Scott Derrickson (born July 16, 1966) is an American filmmaker. He is best known for his work in the horror genre, directing films such as The Exorcism of Emily Rose (2005), Sinister (2012) and The Black Phone (2022). He is also known for the superhero film Doctor Strange (2016), based on the Marvel Comics character. Scott Derrickson grew up in Denver, Colorado. He graduated from Biola University with a B.A. in Humanities with an emphasis in philosophy and literature and a B.A. in communications with an emphasis in film and a minor in theology.[1]He completed his graduate studies at USC School of Cinema-Television.'
+            'DOB':'07-16-1966',
+            'DOD':'N/A',
+            'Bio':'Scott Derrickson is an American filmmaker. He is best known for his work in the horror genre, directing films such as The Exorcism of Emily Rose (2005), Sinister (2012) and The Black Phone (2022). He is also known for the superhero film Doctor Strange (2016), based on the Marvel Comics character. Scott Derrickson grew up in Denver, Colorado. He graduated from Biola University with a B.A. in Humanities with an emphasis in philosophy and literature and a B.A. in communications with an emphasis in film and a minor in theology. He completed his graduate studies at USC School of Cinema-Television.'
         },
         'ImageURL':''
     },
     {
         'MovieID': 3,
         'Title':'Get Out',
-        'Description':'A young African-American visits his white girlfriends parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
+        'Description':'A young African-American visits his white girlfriend\'s parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
         'Genre': {
             'Name':'Psychological Horror',
             'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
@@ -79,7 +83,9 @@ let movies = [
       
         'Director': {
             'Name':'Jordan Peele',
-            'Bio':'Jordan Peele is an Oscar- and Emmy-winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peeles first feature film, "Get Out," was a critically acclaimed blockbuster, recognized with four Academy Award nominations, including Best Picture. The film would earn Peele the Oscar for Best Original Screenplay. His second feature, "Us," broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released in March of 2019 to widespread critical praise. Peeles third feature, the original horror epic, "Nope," opened in the summer of 2022 to rave reviews, the No. 1 slot at the box office, and once again becoming a widely discussed cultural phenomenon. Five years in the making, Peele produced and co-wrote Henry Selicks stop-motion animated feature, "Wendell & Wild," to which he also lent his voice as one of the title characters. Under the Monkeypaw banner, Peele co-wrote and produced Nia DaCostas "Candyman" which made history as the first film helmed by a Black woman director to open at No. 1 at the box office. He also produced Spike Lees "BlacKkKlansman," which earned a nomination for Best Picture and won an Oscar for Best Adapted Screenplay. He has also served as executive producer for numerous television series, including "Hunters" (Amazon), "Lovecraft Country" (HBO), and "The Twilight Zone" (CBS). Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
+            'DOB':'02-21-1979',
+            'DOD':'N/A',
+            'Bio':'Jordan Peele is an Oscar and Emmy winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peele\'s film, "Get Out," was a critically acclaimed blockbuster, with four Academy Award nominations. The film would earn Peele the Oscar for Best Original Screenplay. "Us" broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released. "Nope," opened in the summer of 2022 to rave reviews, and the No. 1 slot at the box office. Peele produced and co-wrote Henry Selick\'s stop-motion animated feature, "Wendell & Wild," and under the Monkeypaw banner, Peele co-wrote and produced Nia DaCosta\'s "Candyman". He also produced Spike Lee\'s "BlacKkKlansman," and served as executive producer for numerous television series, including "Hunters", "Lovecraft Country", and "The Twilight Zone". Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
         },
         'ImageURL':''
     },
@@ -93,7 +99,9 @@ let movies = [
         },
         'Director': {
             'Name':'Mathieu Turi',
-            'Bio':'Mathieu Turi is a French director and screenwriter , born January 17 , 1987in Cannes in Provence-Alpes-Côte dAzur. Mathieu Turi entered the Higher School of Audiovisual Production in 2005 to study film production. After studies and award- winning short films such as Sons of Chaos and Broken , Mathieu Turi became assistant director to Quentin Tarantino for his film Inglourious Basterds (2009) and, among others, Guy Ritchie for Sherlock Holmes: A Game of Shadows (2009 ). 2011) or Luc Besson for Lucy (2014). Under the productive eye of Xavier Gens who “found, in the script a profoundly human story, a new look at the genre and a creature never before seen in cinema” , he wrote and shot his first horror feature film in 2016 post-apocalyptic Hostile in English language 3. He subsequently shot Méander , a horror B series with Gaia Weiss. His next feature film, Gueules Noirs , brings together Samuel Le Bihan , Amir El Kacem and Thomas Solivérès 4 .'
+            'DOB':'01-17-87',
+            'DOD':'N/A',
+            'Bio':'Mathieu Turi is a French director and screenwriter from Cannes in Provence-Alpes-Côte d\'Azur. Mathieu Turi entered the Higher School of Audiovisual Production in 2005 to study film production. After studies and award- winning short films such as Sons of Chaos and Broken , Mathieu Turi became assistant director to Quentin Tarantino for his film Inglourious Basterds (2009) and, among others, Guy Ritchie for Sherlock Holmes: A Game of Shadows (2011) and Luc Besson for Lucy (2014). Under the productive eye of Xavier Gens who “found, in the script a profoundly human story, a new look at the genre and a creature never before seen in cinema”, he wrote and shot his first horror feature film in 2016, Hostile, a post-apocalyptic story. He subsequently shot Méander, a horror B series with Gaia Weiss. His next feature film, Gueules Noirs, brings together Samuel Le Bihan , Amir El Kacem and Thomas Solivérès.'
         },
         'ImageURL':''
     },
@@ -108,9 +116,11 @@ let movies = [
      
         'Director': {
             'Name':'Galder Gaztelu-Urrutia',
-            'Bio':'Galder Gaztelu-Urrutia; born 17 February 1974) is a Spanish film and advertising director and producer.[1] He made his feature-film debut with, The Platform (2019), a dystopian science fiction-horror film. He made a short film, 913 in 2003.[1] He has directed commercials. In 2011, he made The House on the Lake.[1] His feature film debut was in 2019 with the dystopian science fiction-horror film The Platform (its Spanish title is El hoyo). About the film, he said the point is "it isnt about a war between those above and those below — we all have someone above us and someone below us" In February 2023, Deadline announced his next film will be a thriller entitled "Rich Flu", starring Mary Elizabeth Winstead and Jonah Hauer-King.'
+            'DOB':'02-17-1974',
+            'DOD':'N/A',
+            'Bio':'Galder Gaztelu-Urrutia is a Spanish film and advertising director and producer. He made his feature-film debut with, The Platform (2019), a dystopian science fiction-horror film. He made a short film, 913 in 2003, and in 2011, he made The House on the Lake. His feature film debut was in 2019 with the dystopian science fiction-horror film The Platform (its Spanish title is El Hoyo). About the film, he said the point is "it isn\'t about a war between those above and those below — we all have someone above us and someone below us" In February 2023, Deadline announced his next film will be a thriller entitled "Rich Flu", starring Mary Elizabeth Winstead and Jonah Hauer-King.'
         },
-        'ImageURL':'https://www.imdb.com/name/nm4417935/mediaviewer/rm774882561/?ref_=nm_ov_ph'
+        'ImageURL':''
     },
     {
         'MovieID': 6,
@@ -121,10 +131,12 @@ let movies = [
             'Description':'Dark fantasy is a subgenre of fantasy literary, artistic, and cinematic works that incorporate disturbing and frightening themes of fantasy. It often combines fantasy with elements of horror or has a gloomy dark tone or an atmosphere of horror and dread.'
         },
         'Director': {
-            'Name':'Danny Pang' + 'Oxide Chun Pang',
+            'Name':'The Pang Brothers',
+            'DOB':'11-11-1965',
+            'DOD':'N/A',
             'Bio':'Danny Pang Phat and Oxide Pang Chun, collectively known as the Pang Brothers, are a filmmaking duo of screenwriters and film directors. The pair are twins, born in Hong Kong in 1965. Among their films is the hit Asian horror film, The Eye, which has spawned two sequels, as well as a Hollywood version also titled The Eye and a Hindi film called Naina. Besides working in Hong Kong, the pair frequently work in the Thai film industry, where they made their directorial debut as a team, Bangkok Dangerous. The Pang brothers grew up at Ka Wai Chuen in Hung Hom when they were young and studied at Kiangsu-Chekiang College (Shatin). The elder brother, Oxide, graduated from New Method College later.'
         },
-        'ImageURL':'https://www.imdb.com/name/nm4417935/mediaviewer/rm774882561/?ref_=nm_ov_ph'
+        'ImageURL':''
     },
     {
         'MovieID': 7,
@@ -136,7 +148,9 @@ let movies = [
         },
         'Director': {
             'Name':'Michael Rymer',
-            'Bio':'Michael Rymer (born March 1963 in Melbourne) is an Australian television and film director, best known for his work on the re-imagined Battlestar Galactica TV series, for which he directed the pilot miniseries and several episodes of the series. He also directed In Too Deep and Queen of the Damned. Rymer attended film school at the University of Southern California.'
+            'DOB':'03-01-1963',
+            'DOD':'N/A',
+            'Bio':'Michael Rymer is an Australian television and film director, best known for his work on the re-imagined Battlestar Galactica TV series, for which he directed the pilot miniseries and several episodes of the series. He also directed In Too Deep and Queen of the Damned. Rymer attended film school at the University of Southern California.'
         },
         'ImageURL':''
     },
@@ -150,7 +164,9 @@ let movies = [
         },
         'Director': {
             'Name':'Rob Zombie',
-            'Bio':'Rob Zombie (born Robert Bartleh Cummings; January 12, 1965) is an American singer, songwriter, record producer, filmmaker, and actor. His music and lyrics are notable for their horror and sci-fi themes, and his live shows have been praised for their elaborate shock rock theatricality. He has sold an estimated 15 million albums worldwide. Growing up, he had a fascination with horror films and "always wanted to be Alice Cooper, Steven Spielberg, Bela Lugosi, and Stan Lee".'
+            'DOB':'01-12-1965',
+            'DOD':'N/A',
+            'Bio':'Rob Zombie (born Robert Bartleh Cummings) is an American singer, songwriter, record producer, filmmaker, and actor. His music and lyrics are notable for their horror and sci-fi themes, and his live shows have been praised for their elaborate shock rock theatricality. He has sold an estimated 15 million albums worldwide. Growing up, he had a fascination with horror films and "always wanted to be Alice Cooper, Steven Spielberg, Bela Lugosi, and Stan Lee". He has said of his childhood, "I didn\'t aspire to be anything. I was just a dopey kid. Basically everyone seemed amazing to me as a kid. I grew up in some nowhere town... anybody that even seemed remotely famous just seemed like they were on another planet." Zombie\'s parents worked at a carnival, but in 1977, when he was 12, his parents chose to leave after a riot at the carnival where the tents were set on fire. Zombie graduated from Haverhill High School in 1983 and moved to New York City where he attended Parsons School of Design'
         },
         'ImageURL':''
     },
@@ -160,11 +176,13 @@ let movies = [
         'Description':'After moving to a new town, two brothers discover that the area is a haven for vampires.',
         'Genre': {
             'Name':'Comedy Horror',
-            'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."[1] It often crosses over with the black comedy genre. Comedy horror can also parody or subtly spoof horror clichés as its main source of humour or use those elements to take a story in a different direction, for example in The Cabin in the Woods, Trick r Treat, Tucker & Dale vs. Evil, Shaun of the Dead, Beetlejuice, Gremlins, An American Werewolf in London and the Evil Dead franchise.'
+            'Description':'Comedy horror, also known as horror comedy, is a literary, television, and film genre that combines elements of comedy and horror fiction. Comedy horror has been described as able to be categorized under three types: "black comedy, parody and spoof."'
         },
         'Director': {
             'Name':'Joel Schumacher',
-            'Bio':'Joel Schumacher was an American film director, film producer, screenwriter and fashion designer from New York City. He rose to fame in the 1980s for directing the coming-of-age drama "St. Elmos Fire" (1985), and the vampire-themed horror film "The Lost Boys" (1987). In the 1990s, he worked on two controversial superhero films "Batman Forever" (1995) and "Batman & Robin" (1997). His final high-profile film was "The Phantom of the Opera" (2004). It was an adaptation of Andrew Lloyd Webbers 1986 musical, rather than the original novel. Towards the end of his career, Schumacher primarily worked on low-profile films with small budgets.'
+            'DOB':'08-29-1939',
+            'DOD':'06-22-2020',
+            'Bio':'Joel Schumacher was an American film director, film producer, screenwriter and fashion designer from New York City. He rose to fame in the 1980s for directing the coming-of-age drama "St. Elmo\'s Fire" (1985), and the vampire-themed horror film "The Lost Boys" (1987). In the 1990s, he worked on two controversial superhero films "Batman Forever" (1995) and "Batman & Robin" (1997). His final high-profile film was "The Phantom of the Opera" (2004). It was an adaptation of Andrew Lloyd Webber\'s 1986 musical, rather than the original novel. Towards the end of his career, Schumacher primarily worked on low-profile films with small budgets.'
         },
         'ImageURL':''
     },
@@ -178,14 +196,16 @@ let movies = [
         },
         'Director': {
             'Name':'Marcus Nispel',
-            'Bio':'Nispel was born on 26 May 1963[1] in Frankfurt. He grew up near McNair Barracks and was able to learn English from hanging out with children of soldiers.[3] At the age of 15, he got a job at a boutique called Hessler and Kehrer. When he had his first interview at an American ad agency, he was asked what do Oreos mean, and he realized the importance of understanding American culture, and how working in advertising helped him understand that. He received a Fulbright Scholarship at the age of 20 and attended Brooklyn College and New York Institute of Technology. He was also an art director for Young & Rubicam. He started a production company, Portfolio Artists Network which later merged with RSA (Ridley Scott Associates) Black Dog Films to form Portfolio/Black Dog. He worked at RSA as a commercial director for several years, resigning in 2000'
+            'DOB':'05-25-1963',
+            'DOD':'N/A',
+            'Bio':'Nispel was born in Frankfurt and grew up near McNair Barracks where he was able to learn English from hanging out with children of soldiers. At the age of 15, he got a job at a boutique called Hessler and Kehrer. When he had his first interview at an American ad agency, he was asked what do Oreo\'s mean, and he realized the importance of understanding American culture, and how working in advertising helped him understand that. He received a Fulbright Scholarship at the age of 20 and attended Brooklyn College and New York Institute of Technology. He was also an art director for Young & Rubicam. He started a production company, Portfolio Artists Network, which later merged with RSA (Ridley Scott Associates) and Black Dog Films to form Portfolio/Black Dog. He worked at RSA as a commercial director for several years, resigning in 2000'
         },
         'ImageURL':''
     },
     {
         'MovieID': 11,
         'Title':'Us',
-        'Description':'A familys serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them',
+        'Description':'A family\'s serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them',
         'Genre': {
             'Name':'Psychological Horror',
             'Description':'Psychological horror is a subgenre of horror and psychological fiction with a particular focus on mental, emotional, and psychological states to frighten, disturb, or unsettle its audience. The subgenre frequently overlaps with the related subgenre of psychological thriller, and often uses mystery elements and characters with unstable, unreliable, or disturbed psychological states to enhance the suspense, horror, drama, tension, and paranoia of the setting and plot and to provide an overall creepy, unpleasant, unsettling, or distressing atmosphere.'
@@ -193,7 +213,9 @@ let movies = [
       
         'Director': {
             'Name':'Jordan Peele',
-            'Bio':'Jordan Peele is an Oscar- and Emmy-winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peeles first feature film, "Get Out," was a critically acclaimed blockbuster, recognized with four Academy Award nominations, including Best Picture. The film would earn Peele the Oscar for Best Original Screenplay. His second feature, "Us," broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released in March of 2019 to widespread critical praise. Peeles third feature, the original horror epic, "Nope," opened in the summer of 2022 to rave reviews, the No. 1 slot at the box office, and once again becoming a widely discussed cultural phenomenon. Five years in the making, Peele produced and co-wrote Henry Selicks stop-motion animated feature, "Wendell & Wild," to which he also lent his voice as one of the title characters. Under the Monkeypaw banner, Peele co-wrote and produced Nia DaCostas "Candyman" which made history as the first film helmed by a Black woman director to open at No. 1 at the box office. He also produced Spike Lees "BlacKkKlansman," which earned a nomination for Best Picture and won an Oscar for Best Adapted Screenplay. He has also served as executive producer for numerous television series, including "Hunters" (Amazon), "Lovecraft Country" (HBO), and "The Twilight Zone" (CBS). Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
+            'DOB':'02-21-1979',
+            'DOD':'N/A',
+            'Bio':'Jordan Peele is an Oscar and Emmy winning director, writer, actor, producer, and founder of Monkeypaw Productions. Peele\'s film, "Get Out," was a critically acclaimed blockbuster, with four Academy Award nominations. The film would earn Peele the Oscar for Best Original Screenplay. "Us" broke numerous box-office records, becoming the biggest opening for an R-rated original film in history when released. "Nope," opened in the summer of 2022 to rave reviews, and the No. 1 slot at the box office. Peele produced and co-wrote Henry Selick\'s stop-motion animated feature, "Wendell & Wild," and under the Monkeypaw banner, Peele co-wrote and produced Nia DaCosta\'s "Candyman". He also produced Spike Lee\'s "BlacKkKlansman," and served as executive producer for numerous television series, including "Hunters", "Lovecraft Country", and "The Twilight Zone". Prior to becoming a filmmaker, Peele was a celebrated comedian who was the co-star and co-creator of "Key & Peele" on Comedy Central.'
         },
         'ImageURL':''
     }
