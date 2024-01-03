@@ -1,5 +1,7 @@
+//import library
 const mongoose = require('mongoose');
 
+//mongodb schemas
 let movieSchema = mongoose.Schema({
     MovieID: {type: Number, required: true},
     Title: {type: String, required: true},
@@ -25,11 +27,12 @@ let userSchema = mongoose.Schema({
     Password: {type: String, required: true},
     Email: {type: String, required: true},
     Birthday: Date,
-    FavoriteMovies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Movie'}]
+    FavoriteMovies: [{type: mongoose.Schema.Types.MovieID, ref: 'Movie'}] //will need to make sure that Movie.ID works :)
 });
 
-let movie = mongoose.model('movie', movieSchema);
-let user = mongoose.model('user', userSchema);
+let Movie = mongoose.model('Movie', movieSchema);
+let User = mongoose.model('User', userSchema);
 
-module.exports.movie = movie;
-module.exports.user = user;
+//define 'movie' & 'user' models
+module.exports.Movie = Movie;
+module.exports.User = User;
