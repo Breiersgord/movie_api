@@ -1,32 +1,29 @@
-const 
-    express = require('express'),
-    morgan = require('morgan'),
-    fs = require('fs'),
-    path = require('path'),
-    bodyParser = require('body-parser'),
-    uuid = require('uuid');
 
-app = express();
-
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
-
+const express = require('express');
+const app = express(); 
+const bodyParser = require('body-parser');
+const morgan = require('morgan'); //revisit this
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+fs = require('fs'); //revisit this
+path = require('path'); //revisit this
+uuid = require('uuid');
 
-const Movies = Models.Movie;
-const Users = Models.User;
-    
-mongoose.connect('mongodb://localhost:27017/myFlixHorrorDB', { useNewUrlParser: true, useUnifiedTopology: true });
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'}); //revisit this
 
-let users = [
+//middleware for parsing requests
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+/*let users = [
     {
-        UserID: 1,
-        Name: 'Steve',
-        Username: 'userSteve',
-        Password: 'passSteve!!',
-        Email: 'steve.h@st.com',
-        Birthday: '06/05/1966',
-        FavoriteMovies: [9, 7, 10 ]
+        //UserID: 1,
+        //Name: 'Steve',
+        //Username: 'userSteve',
+        //Password: 'passSteve!!',
+        //Email: 'steve.h@st.com',
+        //Birthday: '06/05/1966',
+        //FavoriteMovies: [9, 7, 10 ]
     },
     {
         UserID: 2,
@@ -64,9 +61,9 @@ let users = [
         Birthday: '09/09/1967',
         FavoriteMovies: [1, 5, 2]
     }
-]
+]*/
 
-let movies = [
+/*let movies = [
     {
         MovieID: 1,
         Title:'Honeydew',
@@ -257,16 +254,47 @@ let movies = [
         ImageURL:'',
         Featured: false
     }
-  ];
+  ];*/
 
-app.use(morgan('combined', {stream: accessLogStream}));
+app.use(morgan('combined', {stream: accessLogStream})); //revisit this
 
-app.use(express.static('public')); //routes all requests for static files to their corresponding files within the 'public' folder on a server
+app.use(express.static('public')); //revisit this
+//routes all requests for static files to their corresponding files within the 'public' folder on a server 
 
-app.use(bodyParser.json());
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect('mongodb://localhost:27017/myFlixHorrorDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // CREATE 
-app.post('/users', (req, res) => {
+app.post('/users', async (req, res) => {
+    await Users.findOne({ Username: req.body.Username }) //checks if 'this' username already exists
+        .then((user) => {
+            if (user) { //if so, returns error 'already exists'
+                return res.status(400).send(req.body.Username + 'already exists');
+            } else {
+                Users //if not, creates a new user with the following info provided
+                    .create({
+                        Name: req.Name.body, //additional field - make sure this works :)
+                        Username: req.body.Username,
+                        Password: req.body.Password,
+                        Email: req.body.Email,
+                        Birthday: req.body.Birthday
+                    })
+                    .then((user) =>{res.status(201).json(user) }) //lets the client know their request has been completed
+                .catch((error) => { //a catch-all error handling function
+                    console.error(error);
+                    res.status(500).send('Error: ' + error);
+                })
+            }
+        })
+        .catch((error) => { //a catch-all error handling function
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+        });
+});
+
+/*app.post('/users', (req, res) => {
     const newUser = req.body; //bodyParser is what allows this to be read
 
     if (newUser.name) {
@@ -276,7 +304,7 @@ app.post('/users', (req, res) => {
     } else {
         res.status(400).send('users need names')
     }
-})
+})*/
 
 app.post('/users/:id/:movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
