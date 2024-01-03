@@ -306,7 +306,21 @@ app.post('/users', async (req, res) => {
     }
 })*/
 
-app.post('/users/:id/:movieTitle', (req, res) => {
+app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+    await Users.findOneAndUpdate({ Username: req.params.Username }, {
+        $push: { FavoriteMovies: req.params.MovieID } //pushes movie based off of MovieID
+    },
+    { new: true }) //This line makes sure that the updated document is returned
+    .then((updatedUser) => { //no 'else' as it will accept a duplicate request w/o creating a duplicate file
+        res.json(updatedUser);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+    });
+});
+
+/*app.post('/users/:id/:movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
     
     let user = users.find( user => user.id == id );
@@ -317,7 +331,7 @@ app.post('/users/:id/:movieTitle', (req, res) => {
     } else {
         res.status(400).send('no such user')
     }
-})
+})*/
 
 // READ 
 app.get('/', (req, res) => {
