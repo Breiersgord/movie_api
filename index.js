@@ -1,4 +1,5 @@
-const express = require('express'),
+const 
+    express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'),
     path = require('path'),
@@ -9,51 +10,59 @@ app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'});
 
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+    
+mongoose.connect('mongodb://localhost:27017/myFlixHorrorDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
 let users = [
     {
-        id: 1,
-        name: 'Steve',
-        username: 'userSteve',
-        password: 'passSteve!!',
-        email: 'steve.h@st.com',
-        birthday: '06/05/1966',
-        favoriteMovies: ['The Lost Boys', 'Queen of the Damned', 'The Texas Chainsaw Massacre (2003)' ]
+        UserID: 1,
+        Name: 'Steve',
+        Username: 'userSteve',
+        Password: 'passSteve!!',
+        Email: 'steve.h@st.com',
+        Birthday: '06/05/1966',
+        FavoriteMovies: [9, 7, 10 ]
     },
     {
-        id: 2,
-        name: 'Billy',
-        username: 'userBilly',
-        password: 'passBilly!!',
-        email: 'billy.h@st.com',
-        birthday: '03/29/1967',
-        favoriteMovies: ['The Lost Boys', 'The Black Phone', 'Get Out']
+        UserID: 2,
+        Name: 'Billy',
+        Username: 'userBilly',
+        Password: 'passBilly!!',
+        Email: 'billy.h@st.com',
+        Birthday: '03/29/1967',
+        FavoriteMovies: [9, 2, 3]
     },
     {
-        id: 3,
-        name: 'Eddie',
-        username: 'userEddie',
-        password: 'passEddie!!',
-        email: 'eddie.m@st.com',
-        birthday: '01/01/1965',
-        favoriteMovies: ['31', 'Re-Cycle', 'The Platform', 'The Texas Chainsaw Massacre (2003)'] 
+        UserID: 3,
+        Name: 'Eddie',
+        Username: 'userEddie',
+        Password: 'passEddie!!',
+        Email: 'eddie.m@st.com',
+        Birthday: '01/01/1965',
+        FavoriteMovies: [8, 6, 5, 10] 
     },
     {
-        id: 4,
-        name: 'Nancy',
-        username: 'userNancy',
-        password: 'passNancy!!',
-        email: 'nancy.w@st.com',
-        birthday: '11/11/1967',
-        favoriteMovies: ['The Platform', 'Meander', 'Queen of the Damned']
+        UserID: 4,
+        Name: 'Nancy',
+        Username: 'userNancy',
+        Password: 'passNancy!!',
+        Email: 'nancy.w@st.com',
+        Birthday: '11/11/1967',
+        FavoriteMovies: [5, 4, 7]
     },
     {
-        id: 5,
-        name: 'Jonathan',
-        username: 'userJonathan',
-        password: 'passJonathan!!',
-        email: 'jonathan.b@st.com',
-        birthday: '09/09/1967',
-        favoriteMovies: ['Honeydew', 'The Platform', 'The Black Phone']
+        UserID: 5,
+        Name: 'Jonathan',
+        Username: 'userJonathan',
+        Password: 'passJonathan!!',
+        Email: 'jonathan.b@st.com',
+        Birthday: '09/09/1967',
+        FavoriteMovies: [1, 5, 2]
     }
 ]
 
@@ -191,7 +200,7 @@ let movies = [
             Name:'Rob Zombie',
             DOB:'01-12-1965',
             DOD:'N/A',
-            Bio:'Rob Zombie (born Robert Bartleh Cummings) is an American singer, songwriter, record producer, filmmaker, and actor. His music and lyrics are notable for their horror and sci-fi themes, and his live shows have been praised for their elaborate shock rock theatricality. He has sold an estimated 15 million albums worldwide. Growing up, he had a fascination with horror films and "always wanted to be Alice Cooper, Steven Spielberg, Bela Lugosi, and Stan Lee". He has said of his childhood, "I didn\'t aspire to be anything. I was just a dopey kid. Basically everyone seemed amazing to me as a kid. I grew up in some nowhere town... anybody that even seemed remotely famous just seemed like they were on another planet." Zombie\'s parents worked at a carnival, but in 1977, when he was 12, his parents chose to leave after a riot at the carnival where the tents were set on fire. Zombie graduated from Haverhill High School in 1983 and moved to New York City where he attended Parsons School of Design'
+            Bio:'Rob Zombie (born Robert Bartleh Cummings) is an American singer, songwriter, record producer, filmmaker, and actor. His music and lyrics are notable for their horror and sci-fi themes, and his live shows have been praised for their elaborate shock rock theatricality. He has sold an estimated 15 million albums worldwide. Growing up, he had a fascination with horror films and "always wanted to be Alice Cooper, Steven Spielberg, Bela Lugosi, and Stan Lee". He has said of his childhood, "I didn\'t aspire to be anything. I was just a dopey kid. Basically everyone seemed amazing to me as a kid. I grew up in some nowhere town... anybody that even seemed remotely famous just seemed like they were on another planet." Zombie\'s parents worked at a carnival, but in 1977, when he was 12, his parents chose to leave after a riot at the carnival where the tents were set on fire. Zombie graduated from Haverhill High School in 1983 and moved to New York City where he attended Parsons School of Design.'
         },
         ImageURL:'',
         Featured: false
