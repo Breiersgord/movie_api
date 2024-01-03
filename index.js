@@ -311,12 +311,16 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
         $push: { FavoriteMovies: req.params.MovieID } //pushes movie based off of MovieID
     },
     { new: true }) //This line makes sure that the updated document is returned
-    .then((updatedUser) => { //no 'else' as it will accept a duplicate request w/o creating a duplicate file
-        res.json(updatedUser);
+    .then((updatedUser) => {
+        if (updatedUser) {
+            return res.status(400).send('error: user not found');
+        } else {
+            res.status(201).json(updatedUser);
+        }
     })
     .catch((err) => {
         console.error(err);
-        res.status(500).send('Error: ' + err);
+        res.status(500).send('Error: ' + error);
     });
 });
 
@@ -334,15 +338,43 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
 })*/
 
 // READ 
+//GET default page
 app.get('/', (req, res) => {
-    res.send('default text response'); //sends a response of various types
-});
-  
-app.get('/movies', (req, res) => {
-    res.status(200).json(movies);
+    res.send('myFlixHorror Edition'); //sends a response of various types
 });
 
-app.get('/movies/:title', (req, res) => {
+app.get('/movies', async (req, res) => {
+    await Movies.find()
+        .then((movies) => {
+            res.status(200).json(movies);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
+/*app.get('/movies', (req, res) => {
+    res.status(200).json(movies);
+});*/
+
+//GET all movies by TITLE
+app.get('/movies/:Title', async (req, res) => {
+    await Movies.findOne({ Title: req.params.Title })
+        .then((movies) => {
+            if (movies) {
+                return res.status(200).json(movies);
+        } else {
+                res.status(404).send('error: movie not found');
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
+/*app.get('/movies/:title', (req, res) => {
     //const title = req.params.title; this is the old way to write this command
     const { title } = req.params; //this is the new way to write this command
     const movie = movies.find( movie => movie.Title === title );
@@ -352,9 +384,25 @@ app.get('/movies/:title', (req, res) => {
     } else {
         res.status(400).send('no such movie')
     }
+});*/
+
+//GET all movies by GENRE
+app.get('/movies/genres/:genreName', async (req, res) => {
+    await Movies.find({ 'Genre.Name': req.params.genreName }) //pluralize genre if it returns w/ error :)
+        .then((movies) => {
+            if (movies) {
+                return res.status(200).json(movies);
+            }else{
+                res.status(404).send('error: genre not found');
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
 });
 
-app.get('/movies/genre/:genreName', (req, res) => {
+/*app.get('/movies/genre/:genreName', (req, res) => {
     const { genreName } = req.params;
     const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
 
@@ -363,9 +411,25 @@ app.get('/movies/genre/:genreName', (req, res) => {
     } else {
         res.status(400).send('no such genre')
     }
+});*/
+
+//GET all movies by DIRECTOR
+app.get('/movies/directors/:directorName', async (req, res) => {
+    await Movies.find({ 'Director.Name': req.params.directorName }) //pluralize genre if it returns w/ error :)
+        .then((movies) => {
+            if (movies) {
+                return res.status(200).json(movies);
+            }else{
+                res.status(404).send('error: director not found');
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
 });
 
-app.get('/movies/director/:directorName', (req, res) => {
+/*app.get('/movies/director/:directorName', (req, res) => {
     const { directorName } = req.params;
     const director = movies.find( movie => movie.Director.Name === directorName ).Director;
 
@@ -374,10 +438,34 @@ app.get('/movies/director/:directorName', (req, res) => {
     } else {
         res.status(400).send('no such director')
     }
+});*/
+
+// GET all users - ((not in brief, may remove later))
+app.get('/users', async (req, res) => {
+    await Users.find()
+        .then((users) => {
+            res.status(201).json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
 });
 
-app.get('/users', (req, res) => {
+/*app.get('/users', (req, res) => {
     res.status(200).json(users);
+});*/
+
+// GET user by USERNAME - ((not in brief, may remove later))
+app.get('/users/:Username', async (req, res) => {
+    await Users.findOne({ Username: req.params.Username })
+        .then((users) => {
+            res.json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
 });
 
 // UPDATE
