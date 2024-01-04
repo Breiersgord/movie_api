@@ -72,6 +72,7 @@
                     <br />
                     <code>
                         {
+                            "_id": <br />
                             "MovieID": <br />
                             "Title": <br />
                             "Genre": <br />
@@ -87,16 +88,19 @@
                     <br />
                     <code>
                         {
+                            "_id": [uuid] <br />
                             "MovieID": [movie ID number] <br />
                             "Title": [movie title] <br />
                             "Description": [description of movie] <br />
                             "Genre": { <br />
                                 "Name": [name of genre(s)] <br />
                                 "Description": [description of genre(s)]
-                            } <br />
+                            }, <br />
                             "Director": { <br />
                                 "Name": [name of director] <br />
-                                "Bio": [director short bio] <br />
+                                "DOB": [date of birth] <br />
+                                "DOD": [date of death] <br />
+                                "BIO": [director short bio] <br />
                             }, <br />
                             "ImageURL": [image of director] <br />
                             "Featured": [true or false]
@@ -114,6 +118,7 @@
                     <br />
                     <code>
                         {
+                            "_id": [uuid] <br />
                             "MovieID": [movie ID number] <br />
                             "Title": [movie title] <br />
                             "Description": [description of movie] <br />
@@ -123,7 +128,9 @@
                             }, <br />
                             "Director": { <br />
                                 "Name": [name of director] <br />
-                                "Bio": [director short bio] <br />
+                                "DOB": [date of birth] <br />
+                                "DOD": [date of death] <br />
+                                "BIO": [director short bio] <br />
                             }, <br />
                             "ImageURL": [image of director] <br />
                             "Featured": [true or false]
@@ -132,7 +139,37 @@
                 </td>
             </tr>
             <tr>
-                <td>Return Data about a Genre by Name</td>
+                <td>Return a List of All Movies by Title to a User</td>
+                <td>/movies:Title</td>
+                <td>GET</td>
+                <td>N/A</td>
+                <td>
+                    A JSON Object Holding Data About a Movie by Title <br /> 
+                    <br />
+                    <code>
+                        {
+                            "_id": [uuid] <br />
+                            "MovieID": [movie ID number] <br />
+                            "Title": [movie title] <br />
+                            "Description": [description of movie] <br />
+                            "Genre": { <br />
+                                "Name": [name of genre(s)] <br />
+                                "Description": [description of genre(s)]
+                            }, <br />
+                            "Director": { <br />
+                                "Name": [name of director] <br />
+                                "DOB": [date of birth] <br />
+                                "DOD": [date of death] <br />
+                                "BIO": [director short bio] <br />
+                            }, <br />
+                            "ImageURL": [image of director] <br />
+                            "Featured": [true or false]
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Return Data about Movies by Genre</td>
                 <td>/movies/genre/:genreName</td>
                 <td>GET</td>
                 <td>N/A</td>
@@ -140,14 +177,28 @@
                     <br />
                     <code>
                         {
-                            "Name": [name of genre]<br />
-                            "Description": [description of genre]
+                            "_id": [uuid] <br />
+                            "MovieID": [movie ID number] <br />
+                            "Title": [movie title] <br />
+                            "Description": [description of movie] <br />
+                            "Genre": { <br />
+                                "Name": [name of genre(s)] <br />
+                                "Description": [description of genre(s)]
+                            }, <br />
+                            "Director": { <br />
+                                "Name": [name of director] <br />
+                                "DOB": [date of birth] <br />
+                                "DOD": [date of death] <br />
+                                "BIO": [director short bio] <br />
+                            }, <br />
+                            "ImageURL": [image of director] <br />
+                            "Featured": [true or false]
                         }
                     </code>
                 </td>
             </tr>
             <tr>
-                <td>Return Data About a Director by Name</td>
+                <td>Return Data About Movies by Director</td>
                 <td>/movies/director/:directorName</td>
                 <td>GET</td>
                 <td>N/A</td>
@@ -155,8 +206,22 @@
                     <br />
                     <code>
                         {
-                            "Name": [director name] <br />
-                            "Bio": [short director biography] <br />
+                            "_id": [uuid] <br />
+                            "MovieID": [movie ID number] <br />
+                            "Title": [movie title] <br />
+                            "Description": [description of movie] <br />
+                            "Genre": { <br />
+                                "Name": [name of genre(s)] <br />
+                                "Description": [description of genre(s)]
+                            }, <br />
+                            "Director": { <br />
+                                "Name": [name of director] <br />
+                                "DOB": [date of birth] <br />
+                                "DOD": [date of death] <br />
+                                "BIO": [director short bio] <br />
+                            }, <br />
+                            "ImageURL": [image of director] <br />
+                            "Featured": [true or false]
                         }
                     </code>
                 </td>
@@ -189,6 +254,7 @@
                     <br />
                     <code>
                         {
+                            Name: req.body.Name <br />
                             Username: req.body.Username,<br />
                             Password: req.body.Password,<br />
                             Email: req.body.Email,<br />
@@ -201,8 +267,8 @@
                     <code>
                         {
                             "_id": [uuid] <br />
-                            "Name": Jane Doe <br />
-                            <b>"Username": [username] <br />
+                            <b>"Name": Jane Doe <br />
+                            "Username": [username] <br />
                             "Password": [password] <br />
                             "Email": email@email.com <br />
                             "Birthday": [numerical birthday]</b> <br />
@@ -218,11 +284,11 @@
                 <td>N/A</td>
                 <td>A JSON Object Holding Data About the Updated User Info
                     <code>
-                        {
-                            "_id": [uuid]
+                        {<br />   
+                            "_id": [uuid] <br />
                             "Name": Jane Doe <br />
                             "Username": [username] <br />
-                             "Password": [password] <br />
+                            "Password": [password] <br />
                             "Email": email@email.com <br />
                             "Birthday": [numerical birthday] <br />
                             <b>"Favorite Movies": [remove movie : N/A]</b>
