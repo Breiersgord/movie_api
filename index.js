@@ -15,6 +15,10 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {f
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+let auth = require('./auth')(app); //'app' argument ensures that EXPRESS is available in the 'auth.js' file as well
+const passport = require('passport');
+require('./passport');
+
 /*let users = [
     {
         _id: ObjectId('65949cfc4d44f315a2715850'),
