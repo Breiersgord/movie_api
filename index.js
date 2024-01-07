@@ -17,15 +17,17 @@ app.use(bodyParser.json());
 
 /*let users = [
     {
-        //UserID: 1,
-        //Name: 'Steve',
-        //Username: 'userSteve',
-        //Password: 'passSteve!!',
-        //Email: 'steve.h@st.com',
-        //Birthday: '06/05/1966',
-        //FavoriteMovies: [9, 7, 10 ]
+        _id: ObjectId('65949cfc4d44f315a2715850'),
+        UserID: 1,
+        Name: 'Steve',
+        Username: 'userSteve',
+        Password: 'passSteve!!',
+        Email: 'steve.h@st.com',
+        Birthday: '06/05/1966',
+        FavoriteMovies: [9, 7, 10]
     },
     {
+        _id: ObjectId('65949ddb4d44f315a2715851'),
         UserID: 2,
         Name: 'Billy',
         Username: 'userBilly',
@@ -35,6 +37,7 @@ app.use(bodyParser.json());
         FavoriteMovies: [9, 2, 3]
     },
     {
+        _id: ObjectId('65949e554d44f315a2715852'),
         UserID: 3,
         Name: 'Eddie',
         Username: 'userEddie',
@@ -44,6 +47,7 @@ app.use(bodyParser.json());
         FavoriteMovies: [8, 6, 5, 10] 
     },
     {
+        _id: ObjectId('65949f3e4d44f315a2715853'),
         UserID: 4,
         Name: 'Nancy',
         Username: 'userNancy',
@@ -53,6 +57,7 @@ app.use(bodyParser.json());
         FavoriteMovies: [5, 4, 7]
     },
     {
+        _id: ObjectId('65949fd54d44f315a2715854'),
         UserID: 5,
         Name: 'Jonathan',
         Username: 'userJonathan',
@@ -65,7 +70,8 @@ app.use(bodyParser.json());
 
 /*let movies = [
     {
-        MovieID: 1,
+        _id: ObjectId('659490964d44f315a2715845'),
+        MovieID: 1, 
         Title:'Honeydew',
         Description:'Strange cravings and hallucinations befall a young couple after seeking shelter in the home of an aging farmer and her peculiar son.',
         Genre: {
@@ -82,6 +88,7 @@ app.use(bodyParser.json());
         Featured:true
     },
     {
+        _id: ObjectId('6594924a4d44f315a2715846'),
         MovieID: 2,
         Title:'The Black Phone',
         Description:'After being abducted by a child killer and locked in a soundproof basement, a 13-year-old boy starts receiving calls on a disconnected phone from the killers previous victims.',
@@ -99,6 +106,7 @@ app.use(bodyParser.json());
         Featured:true
     },
     {
+        _id: ObjectId('659492e84d44f315a2715847'),
         MovieID: 3,
         Title:'Get Out',
         Description:'A young African-American visits his white girlfriend\'s parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.',
@@ -117,6 +125,7 @@ app.use(bodyParser.json());
         Featured: true
     },
     {
+        _id: ObjectId('6594938f4d44f315a2715848'),
         MovieID: 4,
         Title:'Meander',
         Description:'A woman finds herself locked in a series of strange tunnels full of deadly traps.',
@@ -134,6 +143,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('6594942a4d44f315a2715849'), 
         MovieID: 5,
         Title:'The Platform',
         Description:'A vertical prison with one cell per level. Two people per cell. Only one food platform and two minutes per day to feed. An endless nightmare trapped in The Hole.',
@@ -152,6 +162,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659494b84d44f315a271584a'),
         MovieID: 6,
         Title:'Re-Cycle',
         Description:'A writer wants to get a glimpse of some genuine supernatural occurrences while doing research for a novel, but her experiences lead her down a dark path as she witnesses vivid hallucinations and begins to lose her grip on reality.',
@@ -169,6 +180,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659495574d44f315a271584b'),
         MovieID: 7,
         Title:'Queen of the Damned',
         Description:'In this loose sequel to Interview with the Vampire: The Vampire Chronicles (1994), the vampire Lestat becomes a rock star whose music wakes up the equally beautiful and monstrous queen of all vampires.',
@@ -186,6 +198,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659496fc4d44f315a271584c'),
         MovieID: 8,
         Title:'31',
         Description:'Five carnival workers are kidnapped and held hostage in an abandoned, hellish compound where they are forced to participate in a violent game, the goal of which is to survive twelve hours against a gang of sadistic clowns.',
@@ -203,6 +216,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659497a24d44f315a271584d'),
         MovieID: 9,
         Title:'The Lost Boys',
         Description:'After moving to a new town, two brothers discover that the area is a haven for vampires.',
@@ -220,6 +234,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659498454d44f315a271584e'),
         MovieID: 10,
         Title:'The Texas Chainsaw Massacre (2003)',
         Description:'After picking up a traumatized young hitchhiker, five friends find themselves stalked and hunted by a deformed chainsaw-wielding loon and his family of equally psychopathic killers.',
@@ -237,6 +252,7 @@ app.use(bodyParser.json());
         Featured: false
     },
     {
+        _id: ObjectId('659498ef4d44f315a271584f'),
         MovieID: 11,
         Title:'Us',
         Description:'A family\'s serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them',
@@ -266,7 +282,8 @@ const Users = Models.User;
 
 mongoose.connect('mongodb://localhost:27017/myFlixHorrorDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// CREATE 
+// CREATE
+// CREATE (POST) a user  
 app.post('/users', async (req, res) => {
     await Users.findOne({ Username: req.body.Username }) //checks if 'this' username already exists
         .then((user) => {
@@ -294,18 +311,7 @@ app.post('/users', async (req, res) => {
         });
 });
 
-/*app.post('/users', (req, res) => {
-    const newUser = req.body; //bodyParser is what allows this to be read
-
-    if (newUser.name) {
-        newUser.id = uuid.v4();
-        users.push(newUser);
-        res.status(201).json(newUser)
-    } else {
-        res.status(400).send('users need names')
-    }
-})*/
-
+// CREATE (POST) a movie to a users FavoriteMovie list
 app.post('/users/:Username/movies/:MovieID', async (req, res) => {
     await Users.findOneAndUpdate(
         {Username: req.params.Username }, 
@@ -321,21 +327,9 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
         });
 });
 
-/*app.post('/users/:id/:movieTitle', (req, res) => {
-    const { id, movieTitle } = req.params;
-    
-    let user = users.find( user => user.id == id );
-
-    if (user) {
-        user.favoriteMovies.push(movieTitle);
-        res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
-    } else {
-        res.status(400).send('no such user')
-    }
-})*/
 
 // READ 
-//GET default page
+// READ (GET) default page
 app.get('/', (req, res) => {
     res.send('myFlixHorror Edition'); //sends a response of various types
 });
@@ -351,11 +345,8 @@ app.get('/movies', async (req, res) => {
         });
 });
 
-/*app.get('/movies', (req, res) => {
-    res.status(200).json(movies);
-});*/
 
-//GET all movies by TITLE
+// READ (GET) all movies by TITLE
 app.get('/movies/:Title', async (req, res) => {
     await Movies.findOne({ Title: req.params.Title })
         .then((movies) => {
@@ -371,19 +362,8 @@ app.get('/movies/:Title', async (req, res) => {
         });
 });
 
-/*app.get('/movies/:title', (req, res) => {
-    //const title = req.params.title; this is the old way to write this command
-    const { title } = req.params; //this is the new way to write this command
-    const movie = movies.find( movie => movie.Title === title );
 
-    if (movie) {
-        res.status(200).json(movie);
-    } else {
-        res.status(400).send('no such movie')
-    }
-});*/
-
-//GET all movies by GENRE
+// READ (GET) all movies by GENRE
 app.get('/movies/genre/:genreName', async (req, res) => {
     await Movies.find({ 'Genre.Name': req.params.genreName }) 
         .then((movies) => {
@@ -399,18 +379,8 @@ app.get('/movies/genre/:genreName', async (req, res) => {
         });
 });
 
-/*app.get('/movies/genre/:genreName', (req, res) => {
-    const { genreName } = req.params;
-    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
 
-    if (genre) {
-        res.status(200).json(genre);
-    } else {
-        res.status(400).send('no such genre')
-    }
-});*/
-
-//GET all movies by DIRECTOR
+// READ (GET) all movies by DIRECTOR
 app.get('/movies/director/:directorName', async (req, res) => {
     await Movies.find({ 'Director.Name': req.params.directorName })
         .then((movies) => {
@@ -426,18 +396,8 @@ app.get('/movies/director/:directorName', async (req, res) => {
         });
 });
 
-/*app.get('/movies/director/:directorName', (req, res) => {
-    const { directorName } = req.params;
-    const director = movies.find( movie => movie.Director.Name === directorName ).Director;
 
-    if (director) {
-        res.status(200).json(director);
-    } else {
-        res.status(400).send('no such director')
-    }
-});*/
-
-// GET all users - ((not in brief, may remove later))
+// READ (GET) all users - ((not in brief, may remove later))
 app.get('/users', async (req, res) => {
     await Users.find()
         .then((users) => {
@@ -449,11 +409,8 @@ app.get('/users', async (req, res) => {
         });
 });
 
-/*app.get('/users', (req, res) => {
-    res.status(200).json(users);
-});*/
 
-// GET user by USERNAME - ((not in brief, may remove later))
+// READ (GET) user by USERNAME - ((not in brief, may remove later))
 app.get('/users/:Username', async (req, res) => {
     await Users.findOne({ Username: req.params.Username })
         .then((users) => {
@@ -470,7 +427,7 @@ app.get('/users/:Username', async (req, res) => {
 });
 
 // UPDATE
-//UPDATE user information
+// UPDATE user information
 app.put('/users/:Username', async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
         {
@@ -492,21 +449,8 @@ app.put('/users/:Username', async (req, res) => {
   
 });
 
-/*app.put('/users/:id', (req, res) => {
-    const { id } = req.params;
-    const updatedUser = req.body; //bodyParser is what allows this to be read
-
-    let user = users.find( user => user.id == id );
-
-    if (user) {
-        user.name = updatedUser.name;
-        res.status(200).json(user);
-    } else {
-        res.status(400).send('no such user')
-    }
-})*/
-
 // DELETE
+// DELETE a movie from a users FavoriteMovie list
 app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username}, { $pull: 
         {
@@ -523,19 +467,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
         });
 });
 
-/*app.delete('/users/:id/:movieTitle', (req, res) => {
-    const { id, movieTitle } = req.params;
-    
-    let user = users.find( user => user.id == id );
-
-    if (user) {
-        user.favoriteMovies = user.favoriteMovies.filter( title => title !== movieTitle ); 
-        res.status(200).send(`${movieTitle} has been removed from user ${id}'s array`);
-    } else {
-        res.status(400).send('no such user')
-    }
-})*/
-
+// DELETE a user by username
 app.delete('/users/:Username', async (req, res) => {
     await Users.findOneAndDelete({Username: req.params.Username}) 
         .then((user) => {
@@ -550,19 +482,6 @@ app.delete('/users/:Username', async (req, res) => {
             res.status(500).send('Error: ' + err);
         });
 });
-
-/*app.delete('/users/:id', (req, res) => {
-    const { id } = req.params;
-    
-    let user = users.find( user => user.id == id );
-
-    if (user) {
-        users = users.filter( user => user.id != id ); 
-        res.status(200).send(`user ${id} has been deleted`);
-    } else {
-        res.status(400).send('no such user')
-    }
-})*/
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
