@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan'); //revisit this
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+const cors = require('cors');
 fs = require('fs'); //revisit this
 path = require('path'); //revisit this
 uuid = require('uuid');
@@ -12,14 +13,31 @@ uuid = require('uuid');
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'}); //revisit this
 
 //middleware for parsing requests
+app.use(express.static('public')); //revisit this
+//routes all requests for static files to their corresponding files within the 'public' folder on a server
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('combined', {stream: accessLogStream})); //revisit this
 
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn’t found on the list of allowed origins
+      let message = 'The CORS policy for this application doesn\'t allow access from origin ' + origin;
+      return callback(new Error(message ), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 let auth = require('./auth')(app); //'app' argument ensures that EXPRESS is available in the 'auth.js' file as well
 
 const passport = require('passport');
 require('./passport');
+
+const {check, validationResult} = require('express-validator');
 
 /*let users = [
     {
@@ -276,12 +294,7 @@ require('./passport');
         ImageURL:'',
         Featured: false
     }
-  ];*/
-
-app.use(morgan('combined', {stream: accessLogStream})); //revisit this
-
-app.use(express.static('public')); //revisit this
-//routes all requests for static files to their corresponding files within the 'public' folder on a server 
+  ];*/ 
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -290,7 +303,25 @@ mongoose.connect('mongodb://localhost:27017/myFlixHorrorDB', { useNewUrlParser: 
 
 // CREATE
 // CREATE (POST) a user  
-app.post('/users', async (req, res) => {
+app.post('/users', [ 
+    check('Username', 'invalid username: 5-15 characters required').isLength({min: 5, max: 15}), // check this later to make sure it works
+    check('Username', 'invalid username: only alphanumeric characters allowed').isAlphanumeric(),
+    //check('Password', 'invalid password: password is required').not().isEmpty(), // i want a more strict requirement
+    check('Password', 'invalid password: 10-20 characters required').isLength({min: 10, max: 20}),
+    check('Password', 'invalid password: only alphanumeric characters allowed').isAlphanumeric(),
+    check('Email', 'invalid email').isEmail(),
+    check('Email', 'invalid email: email is required').not().isEmpty(),
+    check('Email', 'invalid email: only alphanumeric characters allowed').isAlphanumeric(),
+    check('Name', 'invalid name: name is required').not().isEmpty(),
+    check('Name', 'invalid name').isAlphanumeric(),
+    check('Birthday', 'invalid birthday: only numeric characters allowed').isDate,
+    check('Birthday', 'invalid birthday: birthday required').not().isEmpty()
+], async (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array()});
+    }
+    let hashedPassword = Users.hasPassword(req.body.Password);
     await Users.findOne({ Username: req.body.Username }) //checks if 'this' username already exists
         .then((user) => {
             if (user) { //if so, returns error 'already exists'
@@ -300,7 +331,7 @@ app.post('/users', async (req, res) => {
                     .create({
                         Name: req.body.Name, //additional field - make sure this works :)
                         Username: req.body.Username,
-                        Password: req.body.Password,
+                        Password: hashedPassword,
                         Email: req.body.Email,
                         Birthday: req.body.Birthday
                     })
@@ -511,6 +542,7 @@ app.use((err, req, res, next) => {
   });
   
   // listen for requests
-app.listen(8080, () => {
-    console.log('Your app is listening on port 8080.');
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
+    console.log('Listening on Port' + port);
 });
